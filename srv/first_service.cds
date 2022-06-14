@@ -5,7 +5,10 @@ using innovatesapp.hr as inno from '../db/Student';
 service mysrvdemo {
     // stesso nome messo in on
 //   function ReadOperation(msg:String) returns String;
-    @readonly entity StudentSRV as projection on inno.Student;
+    @readonly entity GetStudent as projection on inno.Student;
+    @updateonly entity UpdateStudent as projection on inno.Student;
+    @createeonly entity CreateStudent as projection on inno.Student;
+    @deleteeonly entity DeleteStudent as projection on inno.Student;
 }
 
 //per lanciare il servizio con sqlite: cds run --in-memory
